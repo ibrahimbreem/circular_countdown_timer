@@ -303,21 +303,20 @@ class CircularCountDownTimerState extends State<CircularCountDownTimer>
                     ),
                     widget.isTimerTextShown
                         ? Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               const SizedBox(
                                 height: 10,
                               ),
-                              Align(
-                                alignment: FractionalOffset.center,
-                                child: Text(
-                                  time,
-                                  style: widget.textStyle ??
-                                      const TextStyle(
-                                        fontSize: 16.0,
-                                        color: Colors.black,
-                                      ),
-                                  textAlign: widget.textAlign,
-                                ),
+                              Text(
+                                time,
+                                style: widget.textStyle ??
+                                    const TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.black,
+                                    ),
+                                textAlign: widget.textAlign,
                               ),
                             ],
                           )
