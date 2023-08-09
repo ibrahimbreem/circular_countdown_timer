@@ -302,31 +302,19 @@ class CircularCountDownTimerState extends State<CircularCountDownTimer>
                       ),
                     ),
                     widget.isTimerTextShown
-                        ? Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              Text(
-                                time,
-                                style: widget.textStyle ??
-                                    const TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.black,
-                                    ),
-                                textAlign: widget.textAlign,
-                              ),
-                            ],
+                        ? Align(
+                            alignment: FractionalOffset.center,
+                            child: Padding(
+                                padding: const EdgeInsets.only(top: 10.0),
+                                child: Text(
+                                  time,
+                                  style: widget.textStyle ??
+                                      const TextStyle(
+                                        fontSize: 16.0,
+                                        color: Colors.black,
+                                      ),
+                                  textAlign: widget.textAlign,
+                                )),
                           )
                         : Container(),
                   ],
