@@ -76,6 +76,7 @@ class CircularCountDownTimer extends StatefulWidget {
 
   /// Handles the timer start.
   final bool autoStart;
+  final double padding;
 
   /* 
    * Function to format the text.
@@ -113,6 +114,7 @@ class CircularCountDownTimer extends StatefulWidget {
     this.autoStart = true,
     this.textFormat,
     this.controller,
+    required this.padding,
   }) : assert(initialDuration <= duration);
 
   @override
@@ -305,7 +307,8 @@ class CircularCountDownTimerState extends State<CircularCountDownTimer>
                         ? Align(
                             alignment: FractionalOffset.center,
                             child: Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
+                                padding:
+                                    EdgeInsets.only(top: widget.padding ?? 2),
                                 child: Text(
                                   time,
                                   style: widget.textStyle ??
